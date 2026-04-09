@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
+
+:root {
+  --bg-start: #40b6ff;
+  --bg-end: #1c55b1;
+  --btn-start: #0080c8;
+  --btn-end: #005ba9;
+  --text-main: #333333;
+  --accent: #1e90ff;
+  --hover-scale: 1.02;
+  --radius-lg: 1.5rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, var(--bg-start), var(--bg-end));
+  font-family: 'Baloo 2', cursive;
+  color: var(--text-main);
+}
+
+form {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+form:hover {
+  transform: translateY(-5px);
+}
+
+h1, legend {
+  font-weight: 600;
+  color: var(--accent);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+label, .form-label {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.logoWeb {
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  .logoWeb {
+    max-width: 400px;
+  }
+}
+
+.imgWelcome {
+  display: block;
+  margin: 0 auto;
+  padding-top: 40px;
+  max-width: 850px;
+  width: 100%;
+  height: auto;
+  border-radius: 50px;
+}
+
+.btnReturn {
+  display: block;
+  margin: auto;
+  width: 180px;
+  height: 55px;
+  border: 3px solid #0b50a2;
+  background: radial-gradient(circle at center, var(--btn-start), var(--btn-end));
+  color: white;
+  font-size: 25px;
+}
+
+@media (max-width: 800px) {
+  .imgWelcome {
+    max-width: 370px;
+    padding-top: 200px;
+  }
+}
+
+.form-control,
+.form-select,
+textarea {
+  border-radius: var(--radius-lg);
+  border: 2px solid #ccc;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0.5rem rgba(30,144,255,0.3);
+  transform: scale(var(--hover-scale));
+}
+
+.btn {
+  display: block;
+  margin: auto;
+  border: 3px solid #0b50a2;
+  color: white;
+  width: 180px;
+  background: radial-gradient(circle at center, var(--btn-start), var(--btn-end));
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-warning{background: radial-gradient(circle at center, #c88900, #a94c00); border: 3px solid #a2420b;}
+.btn-success{background: radial-gradient(circle at center, #18d632, #00a92a); border: 3px solid #008307;}
+.btn-primary:hover,
+.btn-warning:hover,
+.btn-success:hover {
+  transform: scale(var(--hover-scale));
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+
+#levelImg {
+  display: none;
+  max-height: 250px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+}
+#levelImg.active {
+  display: block;
+  margin: 1rem auto;
+}
+
+meter {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 0.75rem;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+meter::-webkit-meter-bar {
+  background: #eee;
+}
+
+#avatar {
+  border-radius: 50%;
+  padding: 0.25rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+#avatar:focus,
+#avatar:hover {
+  box-shadow: 0 0 0.75rem rgba(30,144,255,0.5);
+  transform: scale(1.1);
+}
+
+.avatar-preview {
+  display: none;
+  margin: auto;
+  border: 8px solid #0b50a2;
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 40px rgba(30, 143, 255, 0.877);
+}
+.avatar-preview.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  form {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+}
