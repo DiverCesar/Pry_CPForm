@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bienvenido</title>
+    <link rel="icon" href="https://static.wikia.nocookie.net/clubpenguin/images/e/e7/Normal_Penguin112233.png/revision/latest?cb=20131225013811&path-prefix=es">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <img class="imgWelcome" src="https://oscartooncp.wordpress.com/wp-content/uploads/2012/01/pantalla-inicio-exp-submrn-gif.gif" alt="">
+    
+    <div class="container text-center mt-4" style="position: relative; z-index: 10;">
+      <h2 id="greetingName" class="text-white" style="text-shadow: 2px 2px 4px #000;"></h2>
+    </div>
+
+    <div class="p-2"></div>
+    <a href="./index.html" class="btn btnReturn" title="Regresar al registro">Regresar</a>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./public/js/functions.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const jsonData = localStorage.getItem('userData');
+        
+        if (jsonData) {
+          const data = JSON.parse(jsonData);
+          
+          document.getElementById('greetingName').innerText = '¡Bienvenido, ' + data.name + '!';
+          document.getElementById('displayEmail').innerText = data.email;
+          document.getElementById('displayAge').innerText = data.age;
+          document.getElementById('displayGame').innerText = data.favoriteGame;
+          
+          document.getElementById('savedData').style.display = 'block';
+        }
+      });
+    </script>
+  </body>
+</html>
